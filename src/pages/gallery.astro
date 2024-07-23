@@ -1,0 +1,127 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <main class="px-6 md:px-[5rem] pt-[10dvh] xl:px-[8rem] flex flex-col w-full">
+    <h1 class="text-4xl mb-8 text-[#1765CE]">Gallery</h1>
+    <section class="flex flex-col gap-10">
+      <!-- Model 1 -->
+      <article class="gap-5 grid grid-cols-2 md:grid-cols-3">
+        <div>
+          <img loading="lazy" class="h-[300px]" src="/pool.webp" alt="" />
+        </div>
+        <div>
+          <img loading="lazy" class="h-[300px]" src="/pool2.webp" alt="" />
+        </div>
+        <div class="md:row-span-2">
+          <img
+            loading="lazy"
+            class="md:h-full h-[300px]"
+            id="grid-image"
+            src="/pool4.webp"
+            alt=""
+          />
+        </div>
+        <div>
+          <img loading="lazy" class="h-[300px]" src="/pool5.webp" alt="" />
+        </div>
+        <div class="col-span-2 md:col-span-1">
+          <img loading="lazy" class="h-[300px]" src="/pool3.webp" alt="" />
+        </div>
+        <div>
+          <img loading="lazy" class="h-[300px]" src="/pool11.webp" alt="" />
+        </div>
+        <div>
+          <img loading="lazy" class="h-[300px]" src="/pool8.webp" alt="" />
+        </div>
+        <div class="md:row-span-2">
+          <img
+            loading="lazy"
+            class="md:h-full h-[300px]"
+            id="grid-image"
+            src="/pool9.webp"
+            alt=""
+          />
+        </div>
+        <div class="md:col-span-2">
+          <img loading="lazy" class="h-[300px]" src="/pool10.webp" alt="" />
+        </div>
+      </article>
+
+      <!-- Model 2 
+
+      <article class="grid grid-cols-3 gap-5 w-full h-[1000px]">
+        <div class="flex flex-col gap-5">
+          <img src="/pool.webp" alt="" /><img src="/pool2.webp" alt="" /><img
+            src="/pool3.webp"
+            alt=""
+          />
+        </div>
+
+        <div class="flex flex-col gap-5">
+          <img src="/pool4.webp" alt="" /><img src="/pool5.webp" alt="" /><img
+            src="/pool6.webp"
+            alt=""
+          />
+        </div>
+
+        <div class="flex flex-col gap-5">
+          <img src="/pool8.webp" alt="" /><img src="/pool9.webp" alt="" /><img
+            src="/pool10.webp"
+            alt=""
+          />
+          <img src="/pool11.webp" alt="" />
+        </div>
+      </article>-->
+
+      <article class="flex flex-col">
+        <h1 class="text-4xl mb-8 text-[#1765CE]">Pool Restore</h1>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-y-5">
+          <div
+            class="grid grid-cols-2 gap-5 pb-10 lg:pb-0 border-b-[1px] lg:border-b-0 lg:border-r-[1px] border-[#093062] lg:pr-10"
+          >
+            <img
+              loading="lazy"
+              class="h-[300px]"
+              src="/restore-pool1before.webp"
+              alt=""
+            /><img
+              loading="lazy"
+              class="h-[300px]"
+              src="/restore-pool1after.webp"
+              alt=""
+            />
+          </div>
+
+          <div class="grid grid-cols-2 gap-5 lg:pl-10 pt-5 lg:pt-0">
+            <img
+              class="h-[300px]"
+              loading="lazy"
+              src="/restore-pool2before.webp"
+              alt=""
+            /><img
+              class="h-[300px]"
+              loading="lazy"
+              src="/restore-pool2after.webp"
+              alt=""
+            />
+          </div>
+        </div>
+      </article>
+      <a
+        href="/#contact-us"
+        class="py-3 shadow-sm rounded-2xl hover:shadow-md border-gray-300 text-center w-full col-span-2 md:w-1/2 text-[#1765CE] border-[1px] text-xl hover:border-[#1765CE] duration-200 hover:scale-105"
+        >Contact Us</a
+      >
+    </section>
+  </main>
+</Layout>
+
+<style>
+  img {
+    object-fit: cover;
+    border-radius: 1rem;
+    width: 100%;
+  }
+</style>

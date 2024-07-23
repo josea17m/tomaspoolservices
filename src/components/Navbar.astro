@@ -1,0 +1,100 @@
+<script>
+  const menuBurger = document.getElementById("menuBurger");
+  const menu = document.querySelector(".menu-off");
+  const menuLinks = document.querySelectorAll("a");
+
+  menuBurger.addEventListener("click", () => {
+    menu.classList.toggle("menu-on");
+  });
+
+  menuLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      console.log("click");
+      menu.classList.remove("menu-on");
+    });
+  });
+</script>
+
+<nav class="shadow-md z-50 px-6 md:px-[5rem] xl:px-[8rem]">
+  <a href="/">
+    <div class="flex items-center gap-2">
+      <img src="/favicon.ico" alt="Icon Image" /><span
+        class="text-2xl md:text-xl xl:text-2xl">Tomas Pool Service</span
+      >
+    </div>
+  </a>
+
+  <!-- Menu Desktop -->
+  <div class="hidden md:flex">
+    <a
+      class="duration-200 hover:bg-[#1766ce0e] text-lg hover:text-[#1765ce] px-5 py-1"
+      href="/#services">Services</a
+    >
+    <a
+      class="duration-200 hover:bg-[#1766ce0e] text-lg hover:text-[#1765ce] border-y-0 border-x-[1px] px-5 py-1"
+      href="/#contact-us">Contact</a
+    >
+    <a
+      class="duration-200 hover:bg-[#1766ce0e] text-lg hover:text-[#1765ce] px-5 py-1"
+      href="/gallery">Gallery</a
+    >
+  </div>
+
+  <!-- Menu Mobile -->
+  <div id="menuBurger" class="md:hidden">
+    <svg width="35" height="35" fill="#093062" viewBox="0 0 16 16">
+      <path
+        fill-rule="evenodd"
+        d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+      ></path>
+    </svg>
+  </div>
+</nav>
+
+<div
+  class="menu-off duration-200 md:hidden fixed h-[92dvh] mt-[8dvh] w-full bg-white"
+>
+  <div class="flex flex-col items-center justify-center h-full">
+    <a
+      href="/#services"
+      class="w-[50%] py-6 border-b-[1px] border-[#093062] font-light text-5xl text-center"
+      >Services</a
+    >
+    <a
+      href="/#contact-us"
+      class="w-[50%] border-b-[1px] border-[#093062] py-6 font-light text-5xl text-center"
+      >Contact</a
+    >
+    <a href="/gallery" class="w-[50%] py-6 font-light text-5xl text-center"
+      >Gallery</a
+    >
+  </div>
+</div>
+
+<style>
+  nav {
+    height: 8dvh;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    background-color: #fff;
+  }
+  img {
+    height: 35px;
+    width: 35px;
+  }
+  span,
+  a {
+    font-family: Fredoka, sans-serif;
+    font-weight: 100;
+  }
+
+  .menu-off {
+    left: 500px;
+  }
+  .menu-on {
+    left: 0px;
+  }
+</style>
