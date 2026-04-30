@@ -1,43 +1,65 @@
 <section class="flex gap-10 w-full mb-20">
-  <article class="flex flex-col">
-    <p class="text-2xl">
-      Tomas Pool Service provides expert pool maintenance and repair services,
-      ensuring a <span>safe</span> and <span>enjoyable</span> experience. Our dedicated
-      team ensures <span>cleanliness</span> and <span>efficiency</span>,
-      allowing you to relax without concerns.
+  <article class="flex flex-col w-full">
+    <p class="text-2xl max-w-2xl mb-4">
+      <span class="en">Tomas Pool Service provides expert pool maintenance and repair services,
+        ensuring a <em>safe</em> and <em>enjoyable</em> experience. Our dedicated
+        team ensures <em>cleanliness</em> and <em>efficiency</em>,
+        allowing you to relax without concerns.</span>
+      <span class="es">Tomas Pool Service ofrece servicios expertos de mantenimiento y reparación de piscinas,
+        garantizando una experiencia <em>segura</em> y <em>agradable</em>. Nuestro equipo dedicado
+        asegura <em>limpieza</em> y <em>eficiencia</em>,
+        para que puedas relajarte sin preocupaciones.</span>
     </p>
+
     <div id="services">
-      <h2 class="text-4xl mt-10 mb-10 text-[#1765CE]">Services</h2>
+      <h2 class="text-4xl mt-10 mb-10 text-[#1765CE]">
+        <span class="en">Services</span><span class="es">Servicios</span>
+      </h2>
       <ul class="flex gap-10 flex-col md:flex-row">
         <li class="shadow-xl hover:scale-105 flex-1 font-medium">
           <div>
-            <img loading="lazy" src="pool.webp" alt="" />
-            <p class="text-[#1765ce] text-xl xl:text-2xl">Pool Maintenance</p>
-            <p class="tetx-base xl:text-lg">
-              Quimical balance. Brushing walls. Vacuuming, and more.
+            <img loading="lazy" src="pool.webp" alt="Pool Maintenance" />
+            <p class="text-[#1765ce] text-xl xl:text-2xl">
+              <span class="en">Pool Maintenance</span><span class="es">Mantenimiento de Piscina</span>
+            </p>
+            <p class="text-base xl:text-lg">
+              <span class="en">Chemical balance. Brushing walls. Vacuuming, and more.</span>
+              <span class="es">Balance químico. Cepillado de paredes. Aspirado, y más.</span>
             </p>
           </div>
-          <a href="#contact-us">Get info</a>
+          <a href="#contact-us" class="cta-btn">
+            <span class="en">Get a Free Quote</span><span class="es">Obtén un Presupuesto</span>
+          </a>
         </li>
         <li class="shadow-xl hover:scale-105 flex-1 font-medium">
           <div>
-            <img loading="lazy" src="filter-beforeafter.webp" alt="" />
-            <p class="text-[#1765ce] text-xl xl:text-2xl">Filter Cleaning</p>
-            <p class="tetx-base xl:text-lg">
-              Filter cleaning, repair and replacement. System check. Plumbing.
+            <img loading="lazy" src="filter-beforeafter.webp" alt="Filter Cleaning" />
+            <p class="text-[#1765ce] text-xl xl:text-2xl">
+              <span class="en">Filter Cleaning</span><span class="es">Limpieza de Filtros</span>
+            </p>
+            <p class="text-base xl:text-lg">
+              <span class="en">Filter cleaning, repair and replacement. System check. Plumbing.</span>
+              <span class="es">Limpieza, reparación y reemplazo de filtros. Revisión del sistema. Plomería.</span>
             </p>
           </div>
-          <a href="#contact-us">Get info</a>
+          <a href="#contact-us" class="cta-btn">
+            <span class="en">Get a Free Quote</span><span class="es">Obtén un Presupuesto</span>
+          </a>
         </li>
         <li class="shadow-xl hover:scale-105 flex-1 font-medium">
           <div>
-            <img loading="lazy" src="pool-restore.webp" alt="" />
-            <p class="text-[#1765ce] text-xl xl:text-2xl">Pool Restore</p>
-            <p class="tetx-base xl:text-lg">
-              Acid wash. Tile cleaning. Plaster repair. Leak detection.
+            <img loading="lazy" src="pool-restore.webp" alt="Pool Restore" />
+            <p class="text-[#1765ce] text-xl xl:text-2xl">
+              <span class="en">Pool Restore</span><span class="es">Restauración de Piscina</span>
+            </p>
+            <p class="text-base xl:text-lg">
+              <span class="en">Acid wash. Tile cleaning. Plaster repair. Leak detection.</span>
+              <span class="es">Lavado ácido. Limpieza de azulejos. Reparación de yeso. Detección de fugas.</span>
             </p>
           </div>
-          <a href="#contact-us">Get info</a>
+          <a href="#contact-us" class="cta-btn">
+            <span class="en">Get a Free Quote</span><span class="es">Obtén un Presupuesto</span>
+          </a>
         </li>
       </ul>
     </div>
@@ -45,36 +67,18 @@
 </section>
 
 <style>
-  span {
-    color: #1765ce;
-    font-weight: 500;
-  }
-
+  em { color: #1765ce; font-style: normal; font-weight: 500; }
   li {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 500px;
-    padding: 1.5rem;
-    border-radius: 1rem;
-    border-width: 1px;
-    gap: 1rem;
-    transition: all 0.2s ease-in-out;
+    display: flex; flex-direction: column; justify-content: space-between;
+    height: 500px; padding: 1.5rem; border-radius: 1rem; border-width: 1px;
+    gap: 1rem; transition: all 0.2s ease-in-out;
   }
-  img {
-    border-radius: 10px;
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
+  img { border-radius: 10px; width: 100%; height: 250px; object-fit: cover; }
+  li > div { display: flex; flex-direction: column; gap: 1rem; }
+  .cta-btn {
+    display: inline-block; background-color: #1765ce; color: white;
+    font-weight: 600; font-size: 1rem; padding: 0.75rem 1.5rem;
+    border-radius: 1rem; text-align: center; transition: background-color 0.2s;
   }
-  li > div {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-  a{
-    color: #1765ce;
-    font-weight: 500;
-    font-size: 1.2rem;
-  }
+  .cta-btn:hover { background-color: #0f4fa8; }
 </style>

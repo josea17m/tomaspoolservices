@@ -5,29 +5,77 @@ import Footer from "../sections/Footer.astro";
 
 <html lang="en">
   <head>
-    <meta
-      name="keywords"
-      content="Pool, Services, Maintenance, Cleaning, Pool Service, Houston, Richmond, Acid wash, Drain, Filter, Repair, Pool repair"
-    />
+    <meta name="keywords" content="Pool, Services, Maintenance, Cleaning, Pool Service, Houston, Richmond, Acid wash, Drain, Filter, Repair, Pool repair" />
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-    <meta name="description" content="Tomas Pool Services" />
-
+    <meta name="description" content="Tomas Pool Services - Expert pool maintenance, cleaning & restoration in Houston & Richmond, TX. Family-owned." />
     <meta name="author" content="Alex Montero" />
     <meta name="theme-color" content="#1765CE" />
     <meta name="viewport" content="width=device-width" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" /></noscript>
+    <link rel="preload" as="image" href="/presentation-image.webp" fetchpriority="high" />
     <meta name="generator" content={Astro.generator} />
-    <title>Tomas Pool Services</title>
+    <title>Tomas Pool Services | Houston & Richmond, TX</title>
+    <!-- Set language before body renders to avoid flash -->
+    <script is:inline>
+      (function() {
+        var l = localStorage.getItem('tps-lang') || 'en';
+        document.documentElement.setAttribute('data-lang', l);
+      })();
+    </script>
   </head>
   <body>
     <Navbar />
-
     <slot />
     <Footer />
+
+    <!-- Floating WhatsApp button -->
+    <a href="https://wa.me/+18328905890" target="_blank"
+      class="fixed bottom-6 right-6 z-50 bg-[#25D366] p-3 rounded-full shadow-xl hover:scale-110 duration-200"
+      aria-label="Chat on WhatsApp">
+      <svg class="w-8 h-8" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+        <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.556 4.116 1.528 5.845L0 24l6.335-1.508A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.817 9.817 0 0 1-5.003-1.366l-.36-.214-3.724.886.915-3.617-.236-.374A9.818 9.818 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182c5.43 0 9.818 4.388 9.818 9.818 0 5.43-4.388 9.818-9.818 9.818z"/>
+      </svg>
+    </a>
+
+    <script is:inline>
+      window.toggleLang = function(lang) {
+        document.documentElement.setAttribute('data-lang', lang);
+        localStorage.setItem('tps-lang', lang);
+        document.querySelectorAll('.lang-btn').forEach(function(btn) {
+          btn.classList.toggle('lang-active', btn.dataset.lang === lang);
+        });
+        // Update form placeholders and submit values
+        document.querySelectorAll('[data-en][data-es]').forEach(function(el) {
+          if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+            if (el.type === 'submit') {
+              el.value = lang === 'es' ? el.dataset.es : el.dataset.en;
+            } else {
+              el.placeholder = lang === 'es' ? el.dataset.es : el.dataset.en;
+            }
+          }
+        });
+      };
+      document.addEventListener('DOMContentLoaded', function() {
+        var lang = document.documentElement.getAttribute('data-lang') || 'en';
+        document.querySelectorAll('.lang-btn').forEach(function(btn) {
+          btn.classList.toggle('lang-active', btn.dataset.lang === lang);
+        });
+        document.querySelectorAll('[data-en][data-es]').forEach(function(el) {
+          if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+            if (el.type === 'submit') {
+              el.value = lang === 'es' ? el.dataset.es : el.dataset.en;
+            } else {
+              el.placeholder = lang === 'es' ? el.dataset.es : el.dataset.en;
+            }
+          }
+        });
+      });
+    </script>
   </body>
 </html>
 
@@ -37,18 +85,16 @@ import Footer from "../sections/Footer.astro";
     padding: 0;
     margin: 0;
     scroll-behavior: smooth;
-    font-family:
-      system-ui,
-      -apple-system,
-      BlinkMacSystemFont,
-      "Segoe UI",
-      Roboto,
-      Oxygen,
-      Ubuntu,
-      Cantarell,
-      "Open Sans",
-      "Helvetica Neue",
-      sans-serif;
+    font-family: Fredoka, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     outline: none;
+  }
+  /* Language toggle — default hides Spanish */
+  .es { display: none; }
+  html[data-lang="es"] .es { display: revert; }
+  html[data-lang="es"] .en { display: none; }
+  /* Active language button */
+  .lang-active {
+    background-color: #1765CE !important;
+    color: white !important;
   }
 </style>
