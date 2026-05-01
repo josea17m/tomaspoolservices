@@ -1,4 +1,5 @@
 ---
+import '@fontsource-variable/fredoka';
 import Navbar from "../components/Navbar.astro";
 import Footer from "../sections/Footer.astro";
 ---
@@ -12,10 +13,6 @@ import Footer from "../sections/Footer.astro";
     <meta name="author" content="Alex Montero" />
     <meta name="theme-color" content="#1765CE" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" /></noscript>
     <link rel="preload" as="image" href="/presentation-image.webp" fetchpriority="high" />
     <meta name="generator" content={Astro.generator} />
     <title>Tomas Pool Services | Houston & Richmond, TX</title>
@@ -85,7 +82,7 @@ import Footer from "../sections/Footer.astro";
     padding: 0;
     margin: 0;
     scroll-behavior: smooth;
-    font-family: Fredoka, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family: 'Fredoka Variable', Fredoka, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     outline: none;
   }
   /* Language toggle — default hides Spanish */
